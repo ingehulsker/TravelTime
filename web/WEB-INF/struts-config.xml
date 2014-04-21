@@ -1,0 +1,25 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="RouteActionForm" type="com.ihulsker.traveltime.forms.RouteActionForm" />
+        </form-beans>
+
+    <global-exceptions />
+
+    <global-forwards>
+        <forward name="success" path="/routeinfo.jsp" redirect="false" />
+        <forward name="majorfailure" path="/error.jsp" />
+        <forward name="error" path="/error.jsp" redirect="false" />
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/routeInfo" type="com.ihulsker.traveltime.actions.RouteAction" parameter="useraction"  name="RouteActionForm" validate="false" input="/routeinfo.jsp">
+            <forward name="success" path="/routeinfo.jsp" redirect="false" />
+            <forward name="error" path="/routeinfo.jsp" redirect="false" />
+        </action>
+    </action-mappings>
+        
+    <message-resources parameter="com.ihulsker.traveltime.i18n.ApplicationResource" null="false" />
+        
+</struts-config>    
+        

@@ -1,0 +1,32 @@
+CREATE DATABASE `traveltime`;
+
+CREATE TABLE `route` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `routeid` varchar(160) DEFAULT NULL,
+  `routetype` varchar(160) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `routeproperties` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `routeid` int(11) NOT NULL DEFAULT '0',
+  `location` varchar(160) DEFAULT NULL,
+  `traveltime` int(11) NOT NULL DEFAULT '0',
+  `traveltimeff` int(11) NOT NULL DEFAULT '0',
+  `velocity` int(11) NOT NULL DEFAULT '0',
+  `color` varchar(10) NOT NULL DEFAULT '#000000',
+  `timestamp` datetime NOT NULL,
+  `length` int(11) NOT NULL DEFAULT '0',
+  `dssobjecttype` varchar(160) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `coordinates` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `routeid` int(11) NOT NULL DEFAULT '0',
+  `xcoordinate` int(11) DEFAULT NULL,
+  `ycoordinate` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
