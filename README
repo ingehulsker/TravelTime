@@ -1,1 +1,6 @@
-GitHub Test
+run the scripts in db_create.txt to create the database
+
+database access info:
+URL = jdbc:mysql://localhost:3306/
+USERNAME = traveler
+PASSWORD = t1metrave!
